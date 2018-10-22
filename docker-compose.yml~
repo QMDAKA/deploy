@@ -1,0 +1,23 @@
+version: '2'
+services:
+  backlog:
+    image: "zzzdakazzz095/backlog"
+    restart: always
+    volumes:
+    - ./ase/images:/app/assets/images
+    links:
+      - mongo:mongo
+    ports:
+      - 80:80
+  mongo:
+    image: mongo
+    container_name: mongo
+    volumes:
+      - ./mongodb/data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=daka
+      - MONGO_INITDB_ROOT_PASSWORD=daka
+      - MONGO_INITDB_DATABASE=backlog
+	
