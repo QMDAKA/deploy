@@ -16,8 +16,4 @@ services:
       - ./mongodb/data:/data/db
     ports:
       - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=daka
-      - MONGO_INITDB_ROOT_PASSWORD=daka
-      - MONGO_INITDB_DATABASE=backlog
 	
